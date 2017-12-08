@@ -1,0 +1,7 @@
+{
+  "typescript.format.enable": false,
+  "javascript.format.enable": false,
+
+  "editor.rulers": [80],
+  "editor.formatOnSave": true
+}

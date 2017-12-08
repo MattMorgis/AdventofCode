@@ -8,6 +8,35 @@
   "author": "Matt Morgis",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^21.2.1"
+    "eslint": "^4.12.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.4.2",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^21.2.1",
+    "prettier": "^1.9.1"
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "jsonEnable": ["json"],
+    "javascriptEnable": ["javascript", "javascriptreact"],
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "tabWidth": 2
+  },
+  "eslintConfig": {
+    "extends": ["eslint:recommended", "standard", "prettier"],
+    "plugins": ["jest"],
+    "env": {
+      "jest/globals": true
+    },
+    "rules": {
+      "jest/no-disabled-tests": "warn",
+      "jest/no-identical-title": "error",
+      "jest/valid-expect": "error"
+    }
   }
 }
