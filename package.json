@@ -21,15 +21,26 @@
   },
   "prettier": {
     "bracketSpacing": false,
-    "jsonEnable": ["json"],
-    "javascriptEnable": ["javascript", "javascriptreact"],
+    "jsonEnable": [
+      "json"
+    ],
+    "javascriptEnable": [
+      "javascript",
+      "javascriptreact"
+    ],
     "singleQuote": true,
     "trailingComma": "es5",
     "tabWidth": 2
   },
   "eslintConfig": {
-    "extends": ["eslint:recommended", "standard", "prettier"],
-    "plugins": ["jest"],
+    "extends": [
+      "eslint:recommended",
+      "standard",
+      "prettier"
+    ],
+    "plugins": [
+      "jest"
+    ],
     "env": {
       "jest/globals": true
     },
@@ -38,5 +49,8 @@
       "jest/no-identical-title": "error",
       "jest/valid-expect": "error"
     }
+  },
+  "dependencies": {
+    "ramda": "^0.25.0"
   }
 }
