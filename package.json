@@ -1,0 +1,11 @@
+{
+  "name": "adventofcode2017",
+  "version": "0.1.0",
+  "description": "a series of small programming puzzles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Morgis",
+  "license": "MIT"
+}
