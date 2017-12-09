@@ -1,13 +1,19 @@
 const R = require('ramda');
 
 const checksum = data => {
-  const numbersToSum = data.map(row => {
-    const largest = R.reduce(R.max, 0, row);
-    const smallest = R.reduce(R.min, 1000000000, row);
-    return largest - smallest;
-  });
+  return R.sum(data.map(findDifferenceForRow));
+};
 
-  return R.sum(numbersToSum);
+const findDifferenceForRow = row => {
+  return R.subtract(findMax(row))(findMin(row));
+};
+
+const findMax = list => {
+  return R.reduce(R.max, -Infinity, list);
+};
+
+const findMin = list => {
+  return R.reduce(R.min, Infinity, list);
 };
 
 module.exports = checksum;
