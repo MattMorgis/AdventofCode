@@ -2,17 +2,12 @@ const R = require('ramda');
 
 const checksum = data => {
   const numbersToSum = data.map(row => {
-    const sorted = R.sort(sortNumerically, row);
-    return R.last(sorted) - R.take(1, sorted);
+    const largest = R.reduce(R.max, 0, row);
+    const smallest = R.reduce(R.min, 1000000000, row);
+    return largest - smallest;
   });
 
-  return numbersToSum.reduce((a, b) => {
-    return a + b;
-  }, 0);
-};
-
-const sortNumerically = (a, b) => {
-  return a - b;
+  return R.sum(numbersToSum);
 };
 
 module.exports = checksum;
