@@ -7,6 +7,9 @@
   },
   "author": "Matt Morgis",
   "license": "MIT",
+  "dependencies": {
+    "ramda": "^0.25.0"
+  },
   "devDependencies": {
     "eslint": "^4.12.1",
     "eslint-config-prettier": "^2.9.0",
@@ -21,26 +24,15 @@
   },
   "prettier": {
     "bracketSpacing": false,
-    "jsonEnable": [
-      "json"
-    ],
-    "javascriptEnable": [
-      "javascript",
-      "javascriptreact"
-    ],
+    "jsonEnable": ["json"],
+    "javascriptEnable": ["javascript", "javascriptreact"],
     "singleQuote": true,
     "trailingComma": "es5",
     "tabWidth": 2
   },
   "eslintConfig": {
-    "extends": [
-      "eslint:recommended",
-      "standard",
-      "prettier"
-    ],
-    "plugins": [
-      "jest"
-    ],
+    "extends": ["eslint:recommended", "standard", "prettier"],
+    "plugins": ["jest"],
     "env": {
       "jest/globals": true
     },
@@ -49,8 +41,5 @@
       "jest/no-identical-title": "error",
       "jest/valid-expect": "error"
     }
-  },
-  "dependencies": {
-    "ramda": "^0.25.0"
   }
 }
