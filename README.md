@@ -17,7 +17,7 @@ Run any particular day's `main.js` file:
 node src/day1/main.js
 ```
 
-### Works best run with tests 😄
+### Works best when run with tests 😄
 
 Run with [Jest](https://facebook.github.io/jest/) 🃏
 
