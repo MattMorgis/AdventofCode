@@ -1,4 +1,4 @@
-const checksum = require('./checksum');
+const {checksum, divisionChecksum} = require('./checksum');
 
 // prettier-ignore
 const data = [
@@ -22,3 +22,6 @@ const data = [
 
 console.log('Part 1');
 console.log(checksum(data)); // 45158
+console.log('\n');
+console.log('Part 2');
+console.log(divisionChecksum(data)); // 294
