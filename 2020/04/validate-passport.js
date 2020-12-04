@@ -20,27 +20,27 @@ const parse = (inputs) => {
   return passports;
 };
 
-const getValidPassports = (passports) => {
+const passportsWithRequiredFields = (passports) => {
   return passports.filter((passport) => {
     return Object.keys(passport).length === 7;
   });
 };
 
-const validatePassports = (inputs) => {
+const numberOfPassportsWithRequiredFields = (inputs) => {
   const passports = parse(inputs);
 
-  const validPassports = getValidPassports(passports);
+  const validPassports = passportsWithRequiredFields(passports);
 
   return validPassports.length;
 };
 
-const validatePassportsByField = (inputs) => {
+const validatePassports = (inputs) => {
   const passports = parse(inputs);
 
-  const passportsWithRequiredFields = getValidPassports(passports);
+  const passportsCandidates = passportsWithRequiredFields(passports);
 
   const validPassports = [];
-  for (const passport of passportsWithRequiredFields) {
+  for (const passport of passportsCandidates) {
     let valid = true;
 
     if (!(Number(passport.byr) >= 1920) || !(Number(passport.byr) <= 2002)) {
@@ -104,4 +104,7 @@ const validatePassportsByField = (inputs) => {
   return validPassports.length;
 };
 
-module.exports = { validatePassports, validatePassportsByField };
+module.exports = {
+  numberOfPassportsWithRequiredFields,
+  validatePassports,
+};

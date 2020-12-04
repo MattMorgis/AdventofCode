@@ -1,8 +1,8 @@
 const fs = require("fs/promises");
 
 const {
+  numberOfPassportsWithRequiredFields,
   validatePassports,
-  validatePassportsByField,
 } = require("./validate-passport");
 
 (async () => {
@@ -10,10 +10,9 @@ const {
   const inputs = fileData.trim().split("\n");
 
   console.log("*** Part 1 ***");
-  const validPassports = validatePassports(inputs);
-  console.log({ validPassports });
+  console.log(numberOfPassportsWithRequiredFields(inputs));
 
   console.log("*** Part 2 ***");
-  const validPassportsByField = validatePassportsByField(inputs);
-  console.log({ validPassportsByField });
+  const validPassports = validatePassports(inputs);
+  console.log({ validPassports });
 })();
