@@ -5,10 +5,10 @@ const countTrees = (inputs, slope) => {
   const [right, down] = slope;
 
   for (const [rowNumber, row] of inputs.entries()) {
+    // bad hack to skip a line when downward slope is 2
     if (down === 2 && rowNumber % 2 === 1) continue;
-    const rowLength = row.length;
 
-    if (i >= rowLength) i -= rowLength;
+    if (i >= row.length) i -= row.length;
 
     if (row[i] === "#") trees++;
 
