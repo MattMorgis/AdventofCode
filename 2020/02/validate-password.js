@@ -22,13 +22,19 @@ const findOccurrences = (char, str) => {
   return str.split(char).length - 1;
 };
 
-const validatePasswords = (inputs) => {
-  let validPasswords = 0;
+const parseInputs = (inputs) => {
   const policyPasswords = [];
   for (const input of inputs) {
     const password = parse(input);
     policyPasswords.push(password);
   }
+  return policyPasswords;
+};
+
+const validatePasswordsByOccurrences = (inputs) => {
+  let validPasswords = 0;
+
+  const policyPasswords = parseInputs(inputs);
 
   for (const password of policyPasswords) {
     const occurrences = findOccurrences(password.letter, password.password);
@@ -39,4 +45,23 @@ const validatePasswords = (inputs) => {
   return validPasswords;
 };
 
-module.exports = validatePasswords;
+const validatePasswordsByPosition = (inputs) => {
+  let validPasswords = 0;
+
+  const policyPasswords = parseInputs(inputs);
+
+  for (const password of policyPasswords) {
+    const position1 = password.password[password.min - 1];
+    const position2 = password.password[password.max - 1];
+
+    if ((position1 === password.letter) ^ (position2 === password.letter))
+      validPasswords++;
+  }
+
+  return validPasswords;
+};
+
+module.exports = {
+  validatePasswordsByOccurrences,
+  validatePasswordsByPosition,
+};
