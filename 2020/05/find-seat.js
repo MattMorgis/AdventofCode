@@ -33,6 +33,20 @@ const findHighestSeat = (boardingPasses) => {
   return Math.max(...seatIds);
 };
 
-const findSeatId = (boardingPasses) => {};
+const range = (size, startAt = 0) => {
+  return [...Array(size).keys()].map((i) => i + startAt);
+};
 
-module.exports = { findSeat, findHighestSeat };
+const findSeatId = (boardingPasses) => {
+  const seatIds = getSeatIds(boardingPasses);
+  const completedList = [
+    ...range(Math.max(...seatIds) - Math.min(...seatIds), Math.min(...seatIds)),
+  ];
+  const a = new Set(completedList);
+  const b = new Set(seatIds);
+  const a_minus_b = new Set([...a].filter((x) => !b.has(x)));
+
+  return Array.from(a_minus_b).pop();
+};
+
+module.exports = { findSeat, findHighestSeat, findSeatId };
