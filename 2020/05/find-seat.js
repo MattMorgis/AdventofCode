@@ -13,7 +13,7 @@ const findSeat = (low, high, letters) => {
   }
 };
 
-const findHighestSeat = (boardingPasses) => {
+const getSeatIds = (boardingPasses) => {
   const seatIds = [];
 
   for (const boardingPass of boardingPasses) {
@@ -24,7 +24,15 @@ const findHighestSeat = (boardingPasses) => {
     );
   }
 
+  return seatIds;
+};
+
+const findHighestSeat = (boardingPasses) => {
+  const seatIds = getSeatIds(boardingPasses);
+
   return Math.max(...seatIds);
 };
+
+const findSeatId = (boardingPasses) => {};
 
 module.exports = { findSeat, findHighestSeat };
