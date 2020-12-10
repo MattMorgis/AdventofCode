@@ -11,5 +11,8 @@
   },
   "devDependencies": {
     "tape": "^5.0.1"
+  },
+  "dependencies": {
+    "@datastructures-js/graph": "^4.0.1"
   }
 }
